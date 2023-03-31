@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF562EC329D74CB900AE170C /* PasswrdTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF562EC229D74CB800AE170C /* PasswrdTxtField.swift */; };
+		DF745E8229D5567C005E134B /* QuestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF745E8129D5567C005E134B /* QuestionRow.swift */; };
+		DF754FA129D1C12500D18D4D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF754FA029D1C12500D18D4D /* LogInView.swift */; };
+		DF754FA329D1C19B00D18D4D /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF754FA229D1C19B00D18D4D /* LogInViewModel.swift */; };
+		DF754FA529D2AC9B00D18D4D /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF754FA429D2AC9B00D18D4D /* QuestionModel.swift */; };
+		DF754FA729D2AF6700D18D4D /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF754FA629D2AF6700D18D4D /* QuestionViewModel.swift */; };
+		DF7D243B29D054EA00C3E980 /* ChatBotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D243A29D054EA00C3E980 /* ChatBotApp.swift */; };
+		DF7D243D29D054EA00C3E980 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D243C29D054EA00C3E980 /* ContentView.swift */; };
+		DF7D243F29D054EC00C3E980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7D243E29D054EC00C3E980 /* Assets.xcassets */; };
+		DF7D244229D054EC00C3E980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7D244129D054EC00C3E980 /* Preview Assets.xcassets */; };
+		DF7D244429D054EC00C3E980 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D244329D054EC00C3E980 /* Persistence.swift */; };
+		DF7D244729D054EC00C3E980 /* ChatBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF7D244529D054EC00C3E980 /* ChatBot.xcdatamodeld */; };
+		DF7D244E29D0555800C3E980 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D244D29D0555800C3E980 /* UserModel.swift */; };
+		DF7D245029D0575600C3E980 /* ChatBotPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D244F29D0575600C3E980 /* ChatBotPage.swift */; };
+		DF7D245229D0599600C3E980 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245129D0599600C3E980 /* ChatList.swift */; };
+		DF7D245429D059CA00C3E980 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245329D059CA00C3E980 /* ChatModel.swift */; };
+		DF7D245629D0607100C3E980 /* MainChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245529D0607100C3E980 /* MainChat.swift */; };
+		DF7D245829D0640300C3E980 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245729D0640300C3E980 /* NetworkManager.swift */; };
+		DF7D245A29D0659B00C3E980 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245929D0659B00C3E980 /* MessageModel.swift */; };
+		DF7D245C29D0927B00C3E980 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245B29D0927B00C3E980 /* Common.swift */; };
+		DF7D245E29D0A20500C3E980 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245D29D0A20500C3E980 /* UserSettings.swift */; };
+		DF7D246029D0ABE000C3E980 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D245F29D0ABE000C3E980 /* ChatViewModel.swift */; };
+		DF7D246229D0B6D500C3E980 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D246129D0B6D500C3E980 /* MessageCellView.swift */; };
+		DF7D246429D0C3F500C3E980 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D246329D0C3F500C3E980 /* Manager.swift */; };
+		DFB3BEBB29D0C6F000FC72FB /* ChatBotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3BEBA29D0C6F000FC72FB /* ChatBotModel.swift */; };
+		DFB3BEBD29D0CB9500FC72FB /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3BEBC29D0CB9500FC72FB /* ChatRowView.swift */; };
+		DFB3BEBF29D0CCE300FC72FB /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3BEBE29D0CCE300FC72FB /* SignUp.swift */; };
+		DFB3BEC129D0CF9A00FC72FB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3BEC029D0CF9A00FC72FB /* SignUpView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DF562EC229D74CB800AE170C /* PasswrdTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswrdTxtField.swift; sourceTree = "<group>"; };
+		DF745E8129D5567C005E134B /* QuestionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRow.swift; sourceTree = "<group>"; };
+		DF754FA029D1C12500D18D4D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		DF754FA229D1C19B00D18D4D /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		DF754FA429D2AC9B00D18D4D /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		DF754FA629D2AF6700D18D4D /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		DF7D243729D054EA00C3E980 /* ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7D243A29D054EA00C3E980 /* ChatBotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotApp.swift; sourceTree = "<group>"; };
+		DF7D243C29D054EA00C3E980 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF7D243E29D054EC00C3E980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF7D244129D054EC00C3E980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF7D244329D054EC00C3E980 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DF7D244629D054EC00C3E980 /* ChatBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatBot.xcdatamodel; sourceTree = "<group>"; };
+		DF7D244D29D0555800C3E980 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DF7D244F29D0575600C3E980 /* ChatBotPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotPage.swift; sourceTree = "<group>"; };
+		DF7D245129D0599600C3E980 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		DF7D245329D059CA00C3E980 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		DF7D245529D0607100C3E980 /* MainChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChat.swift; sourceTree = "<group>"; };
+		DF7D245729D0640300C3E980 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DF7D245929D0659B00C3E980 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		DF7D245B29D0927B00C3E980 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		DF7D245D29D0A20500C3E980 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		DF7D245F29D0ABE000C3E980 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DF7D246129D0B6D500C3E980 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		DF7D246329D0C3F500C3E980 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		DFB3BEBA29D0C6F000FC72FB /* ChatBotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotModel.swift; sourceTree = "<group>"; };
+		DFB3BEBC29D0CB9500FC72FB /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
+		DFB3BEBE29D0CCE300FC72FB /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		DFB3BEC029D0CF9A00FC72FB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF7D243429D054EA00C3E980 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF7D242E29D054EA00C3E980 = {
+			isa = PBXGroup;
+			children = (
+				DF7D243929D054EA00C3E980 /* ChatBot */,
+				DF7D243829D054EA00C3E980 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF7D243829D054EA00C3E980 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF7D243729D054EA00C3E980 /* ChatBot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF7D243929D054EA00C3E980 /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				DFB3BEC429D1543200FC72FB /* Managers */,
+				DFB3BEC229D1539400FC72FB /* Models */,
+				DFB3BEC529D1547200FC72FB /* ViewModel */,
+				DFB3BEC729D154E700FC72FB /* UIpages */,
+				DF7D243A29D054EA00C3E980 /* ChatBotApp.swift */,
+				DF7D243C29D054EA00C3E980 /* ContentView.swift */,
+				DF7D243E29D054EC00C3E980 /* Assets.xcassets */,
+				DF7D244329D054EC00C3E980 /* Persistence.swift */,
+				DF7D244529D054EC00C3E980 /* ChatBot.xcdatamodeld */,
+				DF7D244029D054EC00C3E980 /* Preview Content */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		DF7D244029D054EC00C3E980 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DF7D244129D054EC00C3E980 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFB3BEC229D1539400FC72FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF754FA429D2AC9B00D18D4D /* QuestionModel.swift */,
+				DF7D245329D059CA00C3E980 /* ChatModel.swift */,
+				DF7D244D29D0555800C3E980 /* UserModel.swift */,
+				DF7D245929D0659B00C3E980 /* MessageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFB3BEC429D1543200FC72FB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DF7D245729D0640300C3E980 /* NetworkManager.swift */,
+				DF7D246329D0C3F500C3E980 /* Manager.swift */,
+				DF7D245B29D0927B00C3E980 /* Common.swift */,
+				DF7D245D29D0A20500C3E980 /* UserSettings.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DFB3BEC529D1547200FC72FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFB3BEC029D0CF9A00FC72FB /* SignUpView.swift */,
+				DF754FA229D1C19B00D18D4D /* LogInViewModel.swift */,
+				DFB3BEBA29D0C6F000FC72FB /* ChatBotModel.swift */,
+				DF7D245F29D0ABE000C3E980 /* ChatViewModel.swift */,
+				DF754FA629D2AF6700D18D4D /* QuestionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DFB3BEC729D154E700FC72FB /* UIpages */ = {
+			isa = PBXGroup;
+			children = (
+				DFB3BEBE29D0CCE300FC72FB /* SignUp.swift */,
+				DF754FA029D1C12500D18D4D /* LogInView.swift */,
+				DF562EC229D74CB800AE170C /* PasswrdTxtField.swift */,
+				DF7D244F29D0575600C3E980 /* ChatBotPage.swift */,
+				DF7D245129D0599600C3E980 /* ChatList.swift */,
+				DF7D245529D0607100C3E980 /* MainChat.swift */,
+				DFB3BEBC29D0CB9500FC72FB /* ChatRowView.swift */,
+				DF745E8129D5567C005E134B /* QuestionRow.swift */,
+				DF7D246129D0B6D500C3E980 /* MessageCellView.swift */,
+			);
+			path = UIpages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF7D243629D054EA00C3E980 /* ChatBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7D244A29D054EC00C3E980 /* Build configuration list for PBXNativeTarget "ChatBot" */;
+			buildPhases = (
+				DF7D243329D054EA00C3E980 /* Sources */,
+				DF7D243429D054EA00C3E980 /* Frameworks */,
+				DF7D243529D054EA00C3E980 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChatBot;
+			productName = ChatBot;
+			productReference = DF7D243729D054EA00C3E980 /* ChatBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF7D242F29D054EA00C3E980 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					DF7D243629D054EA00C3E980 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = DF7D243229D054EA00C3E980 /* Build configuration list for PBXProject "ChatBot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF7D242E29D054EA00C3E980;
+			productRefGroup = DF7D243829D054EA00C3E980 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF7D243629D054EA00C3E980 /* ChatBot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF7D243529D054EA00C3E980 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF7D244229D054EC00C3E980 /* Preview Assets.xcassets in Resources */,
+				DF7D243F29D054EC00C3E980 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF7D243329D054EA00C3E980 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF562EC329D74CB900AE170C /* PasswrdTxtField.swift in Sources */,
+				DF7D244429D054EC00C3E980 /* Persistence.swift in Sources */,
+				DF7D244729D054EC00C3E980 /* ChatBot.xcdatamodeld in Sources */,
+				DF754FA329D1C19B00D18D4D /* LogInViewModel.swift in Sources */,
+				DF7D245829D0640300C3E980 /* NetworkManager.swift in Sources */,
+				DF7D246429D0C3F500C3E980 /* Manager.swift in Sources */,
+				DF7D245029D0575600C3E980 /* ChatBotPage.swift in Sources */,
+				DF7D245E29D0A20500C3E980 /* UserSettings.swift in Sources */,
+				DF7D245C29D0927B00C3E980 /* Common.swift in Sources */,
+				DFB3BEBB29D0C6F000FC72FB /* ChatBotModel.swift in Sources */,
+				DF7D245429D059CA00C3E980 /* ChatModel.swift in Sources */,
+				DF7D245229D0599600C3E980 /* ChatList.swift in Sources */,
+				DF7D246229D0B6D500C3E980 /* MessageCellView.swift in Sources */,
+				DF7D246029D0ABE000C3E980 /* ChatViewModel.swift in Sources */,
+				DF7D243D29D054EA00C3E980 /* ContentView.swift in Sources */,
+				DF7D245629D0607100C3E980 /* MainChat.swift in Sources */,
+				DF7D245A29D0659B00C3E980 /* MessageModel.swift in Sources */,
+				DF745E8229D5567C005E134B /* QuestionRow.swift in Sources */,
+				DF754FA129D1C12500D18D4D /* LogInView.swift in Sources */,
+				DFB3BEBD29D0CB9500FC72FB /* ChatRowView.swift in Sources */,
+				DF754FA529D2AC9B00D18D4D /* QuestionModel.swift in Sources */,
+				DFB3BEC129D0CF9A00FC72FB /* SignUpView.swift in Sources */,
+				DFB3BEBF29D0CCE300FC72FB /* SignUp.swift in Sources */,
+				DF7D244E29D0555800C3E980 /* UserModel.swift in Sources */,
+				DF754FA729D2AF6700D18D4D /* QuestionViewModel.swift in Sources */,
+				DF7D243B29D054EA00C3E980 /* ChatBotApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DF7D244829D054EC00C3E980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF7D244929D054EC00C3E980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF7D244B29D054EC00C3E980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatBot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Palak.ChatBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF7D244C29D054EC00C3E980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatBot/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Palak.ChatBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF7D243229D054EA00C3E980 /* Build configuration list for PBXProject "ChatBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7D244829D054EC00C3E980 /* Debug */,
+				DF7D244929D054EC00C3E980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7D244A29D054EC00C3E980 /* Build configuration list for PBXNativeTarget "ChatBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7D244B29D054EC00C3E980 /* Debug */,
+				DF7D244C29D054EC00C3E980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF7D244529D054EC00C3E980 /* ChatBot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF7D244629D054EC00C3E980 /* ChatBot.xcdatamodel */,
+			);
+			currentVersion = DF7D244629D054EC00C3E980 /* ChatBot.xcdatamodel */;
+			path = ChatBot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DF7D242F29D054EA00C3E980 /* Project object */;
+}
