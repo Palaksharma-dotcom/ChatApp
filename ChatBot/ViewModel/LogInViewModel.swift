@@ -21,6 +21,9 @@ class LogInViewModel: ObservableObject {
     @Published var secretError = false
     
     func loginuser(settings: UserSettings) -> LogIn? {
+        
+//      to validate the credientials entered by user while logging in
+        
         NetworkManager.shared.requestForApi(requestInfo: ["httpMethod": "GET","domain": "users/me","requestType": .loginUser as RequestType, "username": username,"userSecret": secret], completionHandler: {
             
             data in
@@ -42,6 +45,9 @@ class LogInViewModel: ObservableObject {
     
     
     func saveData(_ user: UserModel, settings: UserSettings) {
+        
+//        to save the username of the user who has logged in to use the secret key
+        
         UserDefaults.standard.set(user.username, forKey: "username")
         UserDefaults.standard.set(user.first_name, forKey: "firstName")
         UserDefaults.standard.set(user.last_name, forKey: "lastName")

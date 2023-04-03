@@ -21,6 +21,9 @@ struct SignUp: View {
                 Text("Please fill the details and create account").font(.caption2)
             }.padding(30)
             
+//          To enter username and show red box when the username entered is not according to the             defined parameters
+            
+            
             TextField("User name", text: $signup.usernametf)
                 .onChange(of: signup.usernametf) { data in
                     signup.usernameError = false
@@ -31,6 +34,8 @@ struct SignUp: View {
                 .padding()
                 .border(signup.usernameError ? Color(.red) : Color(.black))
                 .cornerRadius(4)
+            
+//            To enter firstname and how red box when the username entered is not registered
             TextField("First name", text: $signup.firstNametf)
                 .onChange(of: signup.firstNametf) { data in
                     signup.firstNameError = false
@@ -42,6 +47,8 @@ struct SignUp: View {
                 .border(signup.firstNameError ? Color(.red) : Color(.black))
               
                 .cornerRadius(4)
+            
+//             To enter second name and show red box when the username entered is not according to               the defined parameters
             TextField("Second name", text: $signup.lastNametf)
                 .onChange(of: signup.lastNametf) { data in
                     signup.lastNameError = false
@@ -52,7 +59,8 @@ struct SignUp: View {
                 .padding()
                 .border(signup.lastNameError ? Color(.red) : Color(.black))
                 .cornerRadius(4)
-//            TextField("Password", text: $signup.secrettf)
+
+//            To enter password and show red box when the username entered is not according to               the defined parameters
             PasswrdTextField("Password", text: $signup.secrettf)
                 .onChange(of: signup.secrettf) { data in
                     signup.secretError = false

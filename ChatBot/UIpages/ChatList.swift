@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ChatList: View {
-//    @State var chatList:[ChatModel] = []
-    @State var chatList:[ChatListRowView] = []
-//    @ObservedObject var chat: ChatViewModel
-//    @Published var singupAlert = false
-
     @State var search = ""
     @EnvironmentObject private var setting: UserSettings
-
-//    @State var selectedChat: ChatModel?
+    @State var chatList:[ChatListRowView] = []
     @StateObject private var vm = ChatBotModel()
+    
+    
+//    @ObservedObject var chat: ChatViewModel
+//    @Published var singupAlert = false
+//    @State var chatList:[ChatModel] = []
+//    @State var selectedChat: ChatModel?
+    
     var body: some View {
         ZStack{
         VStack{
@@ -56,27 +57,13 @@ struct ChatList: View {
                         }
                     }.listStyle(.plain).padding().cornerRadius(20)
                 }
-                
-                //                if (chatList.count > 0){
-                //                ForEach(chat.rowdata) { list in
-                //                        ChatListRowView(title: "", lastMsg: selectedChat.lastMessage )
-                
-                
-                //                }
-                //                List(0..<chatList.count, id: \.self) {
-                //                    item in
-                //                    Text("\(chatList[item].id)").onTapGesture {
-                //                        selectedChat = chatList[item]
-                //                    }
-                //                }
-                
                 else{
                     Text("No Chats available")
                         .padding(.top, -400)
                         .frame(alignment: .center)
                 }
             }
-            //            NavigationLink("+", destination: ChatBotPage())
+            
             NavigationLink(destination: ChatBotPage(), label: {
                 Text("+")
                     .font(.largeTitle)
@@ -102,3 +89,20 @@ struct ChatList: View {
 //        ChatList()
 //    }
 //}
+
+
+
+
+//                if (chatList.count > 0){
+//                ForEach(chat.rowdata) { list in
+//                        ChatListRowView(title: "", lastMsg: selectedChat.lastMessage )
+
+
+//                }
+//                List(0..<chatList.count, id: \.self) {
+//                    item in
+//                    Text("\(chatList[item].id)").onTapGesture {
+//                        selectedChat = chatList[item]
+//                    }
+//                }
+

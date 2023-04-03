@@ -29,13 +29,16 @@ class SignUpViewModel: ObservableObject {
     
     
     var focused: Focused?
-    
+
     func signupUser() -> Focused? {
+        
+//        Username, firstname, last name and password validation
+        
         if validateUsername(input: usernametf) {
             if validateName(input: firstNametf) {
                 if validateName(input: lastNametf) {
                     if validatePassword(input: secrettf) {
-//                        loading = true
+
                         NetworkManager.shared.requestForApi(requestInfo: [
                             "httpMethod": "POST",
                             "domain": "users/",
@@ -99,6 +102,9 @@ class SignUpViewModel: ObservableObject {
         return pswdPred.evaluate(with: input)
     }
 }
+
+
+
 //internet error handling
 //naming
 //constant files-> url constant, base url method

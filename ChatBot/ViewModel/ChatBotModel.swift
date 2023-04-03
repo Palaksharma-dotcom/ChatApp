@@ -4,7 +4,7 @@
 //
 //  Created by Rapipay on 27/03/23.
 //
-//                      HomeViewModel
+
 import Foundation
 class ChatBotModel: ObservableObject {
 //    @Published var message: [ChatListRowView] = []
@@ -12,7 +12,7 @@ class ChatBotModel: ObservableObject {
 
     @Published var chats: [ChatModel] = []
     @Published var showNewChatView = false
-//    crea
+
     func loadChats(settings: UserSettings) {
         NetworkManager.shared.requestForApi(requestInfo: [
             "httpMethod": "GET",

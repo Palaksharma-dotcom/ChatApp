@@ -21,14 +21,6 @@ class ChatViewModel: ObservableObject {
         self.loadMessages()
     }
     
-    
-//    func getTime(_ date: String) -> String {
-//        return String(date[date.index(date.startIndex, offsetBy: 11)...date.index(date.startIndex, offsetBy: 15)])
-//    }
-//    func getDate(_ date: String) -> String {
-//        return String(date[date.index(date.startIndex, offsetBy: 0)...date.index(date.startIndex, offsetBy: 10)])
-//    }
-    
     func loadMessages() {
         NetworkManager.shared.requestForApi(requestInfo: [
             "httpMethod": "GET",
@@ -88,23 +80,7 @@ class ChatViewModel: ObservableObject {
             }
         }
     }
-//    func startSocket() {
-//        WSManager.shared.setupConnection(chatId: String(chat.id), chatAccessKey: chat.accessKey) { data in
-//            guard let action = data["action"] as? String else { return }
-//            switch action {
-//            case "new_message":
-//                guard let value = data["data"] as? [String: Any], let msg = value["message"] as? [String: Any], let sender = msg["sender_username"] as? String else { return }
-//                guard sender != self.settings.user.username else { return }
-//                self.message.append(MessageModel(id: msg["id"] as? Int ?? 0, sender: sender, created: msg["created"] as? String ?? "00:00", text: msg["text"] as? String ?? "Text"))
-//            case "is_typing":
-//                guard let value = data["data"] as? [String: Any], let person = value["person"] as? String else { return }
-//                guard person != self.settings.user.username else { return }
-//                self.updateTyping()
-//            default:
-//                break
-//            }
-//        }
-//    }
+
     func startSocket() {
         SocketManager.shared.setUpConnection(chatId: String(chat.id), chatAccessKey: chat.accessKey) { [weak self] result in
             print("Recieved:::::: \(result)")
@@ -138,6 +114,34 @@ class ChatViewModel: ObservableObject {
         }
     }
 
+
+extension String {
+    func toJSON() -> Any? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    }
+}
+
+
+//    func startSocket() {
+//        WSManager.shared.setupConnection(chatId: String(chat.id), chatAccessKey: chat.accessKey) { data in
+//            guard let action = data["action"] as? String else { return }
+//            switch action {
+//            case "new_message":
+//                guard let value = data["data"] as? [String: Any], let msg = value["message"] as? [String: Any], let sender = msg["sender_username"] as? String else { return }
+//                guard sender != self.settings.user.username else { return }
+//                self.message.append(MessageModel(id: msg["id"] as? Int ?? 0, sender: sender, created: msg["created"] as? String ?? "00:00", text: msg["text"] as? String ?? "Text"))
+//            case "is_typing":
+//                guard let value = data["data"] as? [String: Any], let person = value["person"] as? String else { return }
+//                guard person != self.settings.user.username else { return }
+//                self.updateTyping()
+//            default:
+//                break
+//            }
+//        }
+//    }
+
+
 //    func startSocket() {
 //        WSManager.shared.setupConnection(chatId: String(chat.id), chatAccessKey: chat.accessKey, completionHandler: { data in
 //            print(data)
@@ -159,10 +163,10 @@ class ChatViewModel: ObservableObject {
 //            }
 //        })
 //    }
-
-extension String {
-    func toJSON() -> Any? {
-        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
-        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-    }
-}
+//    func getTime(_ date: String) -> String {
+//        return String(date[date.index(date.startIndex, offsetBy: 11)...date.index(date.startIndex, offsetBy: 15)])
+//    }
+//    func getDate(_ date: String) -> String {
+//        return String(date[date.index(date.startIndex, offsetBy: 0)...date.index(date.startIndex, offsetBy: 10)])
+//    }
+    

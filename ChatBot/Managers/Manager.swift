@@ -66,9 +66,21 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
         webSocket?.cancel(with: .goingAway, reason: "Byye".data(using: .utf8))
     }
     
-   
     
+    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
+        print("Connection Established Successfully")
+        ping()
+        recieve()
+    }
     
+    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
+        print("Connection is Terminated")
+    }
+}
+
+
+//          another method
+
 //    func receiveMessages() {
 //         webSocket?.receive { [weak self] result in
 //             guard let self = self else { return }
@@ -102,14 +114,3 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
 //         }
 //     }
     
-    
-    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        print("Connection Established Successfully")
-        ping()
-        recieve()
-    }
-    
-    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        print("Connection is Terminated")
-    }
-}

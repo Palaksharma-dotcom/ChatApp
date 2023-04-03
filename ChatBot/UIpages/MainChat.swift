@@ -15,10 +15,7 @@ struct MainChat: View {
         VStack{
             ScrollView{
                 ScrollViewReader{ value in
-//                Text("tfghjkl")
-//                LazyVStack{
-//                chatviewmodel->  @Published var message: [MessageModel] = []
-                
+
                     ForEach(chat.message, id: \.id){ msg in
                         MessageCellView(message: msg.text, sender: !(msg.sender == chat.settings.user.username), created: msg.created, date: "")
                     }.onAppear{

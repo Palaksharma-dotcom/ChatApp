@@ -21,15 +21,10 @@ struct ChatBotPage: View {
             VStack{
                 HStack{
                     Text(setting.user.username).foregroundColor(.black)
-                    //  6                      .font(.largeTitle)
+                  
                         .bold()
-                    
-                    //                    Button("Logout", action: {
-                    //                        vmg.logoutUser(settings: setting)
-                    //                    })
-                    //                    .padding(.leading, 40)
                 }
-                //                Text("status").foregroundColor(.black)
+               
                 
             }.padding()
             ScrollView{
@@ -72,9 +67,7 @@ struct ChatBotPage: View {
                 vm.showStartingQuestions(allQuestions: self.questions)
             }
             
-            //                Text("happy to help")
-            //                NavigationLink("Talk to our agent", destination: MainChat(vm:chats?)).frame(alignment: .center)
-            //        }.background(Color("Lightblue"))
+            
             HStack{
                 TextField("Enter Message", text: $message)
                     .padding()

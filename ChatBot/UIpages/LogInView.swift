@@ -20,6 +20,8 @@ struct LogInView: View {
                 Text("Welcome to ChatApp").font(.title2).bold()
                 Text("Login to access chatbot")
             }.padding()
+            
+//            to vadidate the login credentials entered by the user 
             TextField("User name",text: $lg.username)
                 .onChange(of: lg.username){
                     data in
@@ -31,12 +33,14 @@ struct LogInView: View {
                 .padding()
                 .border(lg.usernameError ? Color(.red) : Color(.black))
                 .cornerRadius(4)
+            
             PasswrdTextField("Password", text: $lg.secret)
-//            TextField("Password",text: $lg.secret)
+
                 .onChange(of: lg.secret){
                     data in
                     lg.secretError = false
                 }
+
                 .onSubmit {
                     lg.secretError = !lg.isValidPassword(input: lg.secret)
                 }

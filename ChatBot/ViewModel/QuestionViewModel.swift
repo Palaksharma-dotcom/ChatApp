@@ -27,44 +27,7 @@ class QuestionViewModel: ObservableObject {
         return ques
     }
     
-    
-//    func loadQuestions(parent: UUID?) -> [Questions] {
-////        guard let parent = parent else { return [] }
-////        let request: NSFetchRequest<Questions> = Questions.fetchRequest()
-//        let request = Questions.fetchRequest() as NSFetchRequest<Questions>
-//        request.predicate = NSPredicate(format: "parent == %@",parent! as CVarArg)
-//
-//
-//        do {
-//         var p = try PersistenceController.shared.container.viewContext.fetch(request)
-//            print(p.count)
-//            return p
-//
-//
-//        } catch {
-//            print("Error fetching questions: \(error.localizedDescription)")
-//            return []
-//
-//        }
-//
-//    }
- 
-//    func showStartingQuestions(allQuestions: FetchedResults<Questions>) {
-//        self.allQuestions = allQuestions
-//        questions = []
-//        let request: NSFetchRequest<Questions> = Questions.fetchRequest()
-//        request.predicate = NSPredicate(format: "parent == nil")
-//        do {
-//            let fetchedQuestions = try PersistenceController.shared.container.viewContext.fetch(request)
-//            for question in fetchedQuestions {
-//                guard let id = question.id, let text = question.question else { continue }
-//                let questionModel = QuestionModel(id: id, parent: question.parent, que: text)
-//                questions.append(questionModel)
-//            }
-//        } catch {
-//            print("Error fetching questions: \(error.localizedDescription)")
-//        }
-//    }
+
     func showStartingQuestions(allQuestions: FetchedResults<Questions>) {
         self.allQuestions = allQuestions
         questions = []
@@ -81,7 +44,7 @@ class QuestionViewModel: ObservableObject {
             if item.count != 0 {
                 questions.append(QuestionModel(id: UUID(), parent: UUID(), que: question.question, fromBot: false))
                 chatTitle = question.question
-//                chatTitle = question.question
+
             }
             for que in item {
                 questions.append(QuestionModel(id: que.id!, parent: que.parent, que: que.question!))
@@ -219,3 +182,42 @@ class QuestionViewModel: ObservableObject {
         }
     }
 }
+//                       OTHER METHODS
+
+//    func loadQuestions(parent: UUID?) -> [Questions] {
+////        guard let parent = parent else { return [] }
+////        let request: NSFetchRequest<Questions> = Questions.fetchRequest()
+//        let request = Questions.fetchRequest() as NSFetchRequest<Questions>
+//        request.predicate = NSPredicate(format: "parent == %@",parent! as CVarArg)
+//
+//
+//        do {
+//         var p = try PersistenceController.shared.container.viewContext.fetch(request)
+//            print(p.count)
+//            return p
+//
+//
+//        } catch {
+//            print("Error fetching questions: \(error.localizedDescription)")
+//            return []
+//
+//        }
+//
+//    }
+
+//    func showStartingQuestions(allQuestions: FetchedResults<Questions>) {
+//        self.allQuestions = allQuestions
+//        questions = []
+//        let request: NSFetchRequest<Questions> = Questions.fetchRequest()
+//        request.predicate = NSPredicate(format: "parent == nil")
+//        do {
+//            let fetchedQuestions = try PersistenceController.shared.container.viewContext.fetch(request)
+//            for question in fetchedQuestions {
+//                guard let id = question.id, let text = question.question else { continue }
+//                let questionModel = QuestionModel(id: id, parent: question.parent, que: text)
+//                questions.append(questionModel)
+//            }
+//        } catch {
+//            print("Error fetching questions: \(error.localizedDescription)")
+//        }
+//    }
