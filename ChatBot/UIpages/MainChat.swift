@@ -21,7 +21,8 @@ struct MainChat: View {
                         MessageCellView(message: msg.text, sender: !(msg.sender == chat.settings.user.username), created: msg.created, date: "")
                     }.onAppear{
                         
-//                        FOR LAST MESSAGE TO APPEAR ON THE SCREEN _^|\                        value.scrollTo(vm.message[vm.message.count - 1].id)
+//                        FOR LAST MESSAGE TO APPEAR ON THE SCREEN _^|\
+//                        value.scrollTo(vm.message[vm.message.count - 1].id)
 
                         
                     }
@@ -61,10 +62,10 @@ struct MainChat: View {
                     }
                 //
                     .navigationBarTitle(chat.isTyping ? "is typing" : String(chat.chat.id), displayMode: .inline)
-                    .navigationBarItems(trailing:  chat.isOnline ? Circle()
+                    .navigationBarItems(trailing:  chat.isTyping ? Circle()
                         .fill(Color.green)
                         .frame(width: 10, height: 10) : Circle()
-                        .fill(Color.gray)
+                        .fill(Color.clear)
                         .frame(width: 10, height: 10))
                 
             }

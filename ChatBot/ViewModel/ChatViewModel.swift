@@ -46,33 +46,8 @@ class ChatViewModel: ObservableObject {
             print(self.message.count)
         })
     }
-    func userOnline() {
 
-//        https://api.chatengine.io/chats/{{chat_id}}/messages/{{message_id}}/
-        NetworkManager.shared.requestForApi(requestInfo: [
-            "httpMethod": "GET",
-//            "domain": "users/\(self.chat.id)/messages/\(self.msg.id)",
-            "requestType": .isonline as RequestType,
-            "username": self.settings.user.username,
-            "userSecret": self.settings.user.secret],
-            completionHandler: { data in
-//        https://api.chatengine.io/users/{{user_id}}/
-//        NetworkManager.shared.requestForApi(requestInfo: [
-//            "httpMethod": "PATCH",
-//            "domain": "users/\(self.chat.id)/",
-//            "requestType": .isonline as RequestType,
-//            "username": self.settings.user.username,
-//            "userSecret": self.settings.user.secret],
-//            completionHandler: { data in
-//
-        })
-        
-    }
-    func updateOnline(){
-        if self.isOnline != true{
-            self.isOnline = true
-        }
-    }
+   
     func showTyping() {
         NetworkManager.shared.requestForApi(requestInfo: [
             "httpMethod": "POST",
@@ -180,6 +155,15 @@ extension String {
 }
 
 
+
+//            guard let self = self else { return }
+//            switch result {
+//            case .success(let data):
+//                guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return }
+//                guard let action = json["action"] as? String else { return }
+            
+            
+
 //    func startSocket() {
 //        WSManager.shared.setupConnection(chatId: String(chat.id), chatAccessKey: chat.accessKey) { data in
 //            guard let action = data["action"] as? String else { return }
@@ -227,3 +211,31 @@ extension String {
 //        return String(date[date.index(date.startIndex, offsetBy: 0)...date.index(date.startIndex, offsetBy: 10)])
 //    }
     
+
+//func userOnline() {
+//
+////        https://api.chatengine.io/chats/{{chat_id}}/messages/{{message_id}}/
+//    NetworkManager.shared.requestForApi(requestInfo: [
+//        "httpMethod": "GET",
+////            "domain": "users/\(self.chat.id)/messages/\(self.msg.id)",
+//        "requestType": .isonline as RequestType,
+//        "username": self.settings.user.username,
+//        "userSecret": self.settings.user.secret],
+//        completionHandler: { data in
+////        https://api.chatengine.io/users/{{user_id}}/
+////        NetworkManager.shared.requestForApi(requestInfo: [
+////            "httpMethod": "PATCH",
+////            "domain": "users/\(self.chat.id)/",
+////            "requestType": .isonline as RequestType,
+////            "username": self.settings.user.username,
+////            "userSecret": self.settings.user.secret],
+////            completionHandler: { data in
+////
+//    })
+//
+//}
+//func updateOnline(){
+//    if self.isOnline != true{
+//        self.isOnline = true
+//    }
+//}

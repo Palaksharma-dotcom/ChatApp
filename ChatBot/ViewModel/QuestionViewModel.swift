@@ -59,6 +59,7 @@ class QuestionViewModel: ObservableObject {
         NetworkManager.shared.requestForApi(requestInfo: ["httpMethod": "PUT", "domain": "chats/", "requestType":
                 .createChat as RequestType, "username": setting.user.username, "userSecret": setting.user.secret, "createChat": CreateChat(usernames: [setting.user.username == ChatRoom.user ? "Ashish_" : ChatRoom.user], title: chatTitle)], completionHandler: {data in print(data)
 //                    chat title same both will enter in same room
+//                    below data is retrieved from the api
                     guard let value = data as? [String: Any] else {return}
                     let admin = value["admin"] as? [String: Any]
                     let sender = admin?["username"] as? String ?? "Sender"

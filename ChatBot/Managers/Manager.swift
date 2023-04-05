@@ -17,7 +17,7 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
     static let shared = SocketManager()
     private var webSocket: URLSessionWebSocketTask?
     var completionHandler: ((String)->())?
-    
+//    it establishes the connection with the other on the basis of chatid and secretkey
     func setUpConnection(chatId: String, chatAccessKey: String, completionHandler: @escaping ((String)->())) {
         self.completionHandler = completionHandler
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
@@ -26,6 +26,7 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
         webSocket?.resume()
     }
     func recieve() {
+//        to receive message from other side
         webSocket?.receive(completionHandler: { [weak self] result in
             switch result {
             case .success(let message):
@@ -45,7 +46,9 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
             self?.recieve()
         })
     }
+
     func send() {
+//        to send message
         webSocket?.send(.string("Message from User"), completionHandler: { error in
             if let error = error {
                 print("error: \(error)")
@@ -55,6 +58,7 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
         })
     }
     func ping() {
+//        to point error
         webSocket?.sendPing(pongReceiveHandler: { error in
             if let error = error {
                 print("Ping error: \(error)")
@@ -63,11 +67,13 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
     }
     
     func close() {
+//        to terminate the connection
         webSocket?.cancel(with: .goingAway, reason: "Byye".data(using: .utf8))
     }
     
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
+//        displays message when connection is established
         print("Connection Established Successfully")
         ping()
         recieve()
