@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//contains all detalis required during signin process
 enum Focused {
     case username
     case secret
@@ -28,7 +29,7 @@ class SignUpViewModel: ObservableObject {
     @Published var singupErrorAlert = false
     
     
-    var focused: Focused?
+//    var focused: Focused?
 
     func signupUser() -> Focused? {
         
@@ -38,7 +39,10 @@ class SignUpViewModel: ObservableObject {
             if validateName(input: firstNametf) {
                 if validateName(input: lastNametf) {
                     if validatePassword(input: secrettf) {
-
+//api is divided into 4 parts : httpMethod-> put,post,get
+//                        domain-> user, me etc
+//                        requestType-> to call specific api
+//                        httpBody-> details(parameters) required in api
                         NetworkManager.shared.requestForApi(requestInfo: [
                             "httpMethod": "POST",
                             "domain": "users/",
@@ -47,12 +51,13 @@ class SignUpViewModel: ObservableObject {
                             completionHandler: { item in
                             print(item)
                             guard let item = item as? [String: Any] else {return}
-                            if let item = item["first_name"] as? String {
+//             ---->it will check the items and if any field (last name here) is present it will retun signup alert else it will return error message
+                            if let item = item["last_name"] as? String {
                                 self.singupAlert = true
                             } else {
-                                self.singupAlert = true
+                                self.singupErrorAlert = true
                             }
-//                            self.loading = false
+
                         })
                         return nil
                     } else {

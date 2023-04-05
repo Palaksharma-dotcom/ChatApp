@@ -8,18 +8,24 @@
 import Foundation
 class ChatViewModel: ObservableObject {
     @Published var chat: ChatModel
-//    @Published var usage: UserModel
     @Published var settings: UserSettings
     @Published var messageentered = ""
     @Published var message: [MessageModel] = []
+//    @Published var msg: MessageModel
     @Published var rowdata: [ChatListRowView] = []
     @Published var isTyping = false
+    @Published var isOnline = false
     
+   
+//    init(chat: ChatModel, settings: UserSettings, msg: MessageModel){
     init(chat: ChatModel, settings: UserSettings){
         self.chat = chat
+//        self.msg = msg
         self.settings = settings
         self.loadMessages()
     }
+    
+    
     
     func loadMessages() {
         NetworkManager.shared.requestForApi(requestInfo: [
@@ -40,6 +46,33 @@ class ChatViewModel: ObservableObject {
             print(self.message.count)
         })
     }
+    func userOnline() {
+
+//        https://api.chatengine.io/chats/{{chat_id}}/messages/{{message_id}}/
+        NetworkManager.shared.requestForApi(requestInfo: [
+            "httpMethod": "GET",
+//            "domain": "users/\(self.chat.id)/messages/\(self.msg.id)",
+            "requestType": .isonline as RequestType,
+            "username": self.settings.user.username,
+            "userSecret": self.settings.user.secret],
+            completionHandler: { data in
+//        https://api.chatengine.io/users/{{user_id}}/
+//        NetworkManager.shared.requestForApi(requestInfo: [
+//            "httpMethod": "PATCH",
+//            "domain": "users/\(self.chat.id)/",
+//            "requestType": .isonline as RequestType,
+//            "username": self.settings.user.username,
+//            "userSecret": self.settings.user.secret],
+//            completionHandler: { data in
+//
+        })
+        
+    }
+    func updateOnline(){
+        if self.isOnline != true{
+            self.isOnline = true
+        }
+    }
     func showTyping() {
         NetworkManager.shared.requestForApi(requestInfo: [
             "httpMethod": "POST",
@@ -50,6 +83,7 @@ class ChatViewModel: ObservableObject {
             completionHandler: { data in
             
         })
+        
     }
     func sendMessages() {
         if messageentered.count == 0 {
@@ -69,6 +103,7 @@ class ChatViewModel: ObservableObject {
         })
         messageentered = ""
     }
+   
     func closeConnection() {
         SocketManager.shared.close()
     }
@@ -86,16 +121,27 @@ class ChatViewModel: ObservableObject {
             print("Recieved:::::: \(result)")
             print(self?.chat.accessKey)
             guard let result = result.toJSON() as? [String: Any] else {return}
+            print("hiiiii \(result)")
+//result will give action and data related to it
+            
+            
+            
 //            guard let self = self else { return }
 //            switch result {
 //            case .success(let data):
 //                guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return }
 //                guard let action = json["action"] as? String else { return }
             
+            
+//            socket will be called in 2 cases, 1: new message. 2: typing status
+            
             guard let action = result["action"] as? String else { return }
+//            print("hiiiii \(action)")
                 switch action {
                 case "new_message":
+//                    data related to new message
                     guard let messageData = result["data"] as? [String: Any], let message = messageData["message"] as? [String: Any] else { return }
+//                    if sender is
                     guard let sender = message["sender_username"] as? String, sender != self?.settings.user.username else { return }
                     let messageModel = MessageModel(id: message["id"] as? Int ?? 0,
                                                     sender: sender,
@@ -104,8 +150,18 @@ class ChatViewModel: ObservableObject {
                     self?.message.append(messageModel)
 
                 case "is_typing":
+                    
                     guard let typingData = result["data"] as? [String: Any], let person = typingData["person"] as? String, person != self!.settings.user.username else { return }
                     self?.updateTyping()
+                    
+                case "edit_chat":
+//
+                    guard let onlineData = result["data"] as? [String: Any] else {return}
+                    let people = onlineData["people"] as? [[String: Any]]
+                    let person1 = people?[0]["person"] as? [String: Any]
+                    
+                    
+                    
 
                 default:
                     break
@@ -113,6 +169,7 @@ class ChatViewModel: ObservableObject {
             }
         }
     }
+
 
 
 extension String {

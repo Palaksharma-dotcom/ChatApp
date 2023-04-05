@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//all the fields required for login are put in an enum
 enum LogIn {
     case username
     case secret
@@ -31,6 +32,7 @@ class LogInViewModel: ObservableObject {
                 if let suc = data["first_name"] as? String {
                     self.saveData(UserModel(username: self.username, secret: self.secret , first_name: data["first_name"] as! String, last_name: data["last_name"] as! String), settings: settings)
                     print(data)
+                    print("checking")
                 } else {
                     self.loginAlert = true
                 }

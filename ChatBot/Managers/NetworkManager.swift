@@ -7,7 +7,7 @@
 
 
 import Foundation
-
+//all operations requiring api call are defined here
 enum RequestType: String {
     case createUser
     case loginUser
@@ -16,6 +16,7 @@ enum RequestType: String {
     case sendMessage
     case getMessages
     case typing
+    case isonline
 }
 
 

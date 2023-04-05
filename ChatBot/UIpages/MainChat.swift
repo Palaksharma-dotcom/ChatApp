@@ -11,6 +11,7 @@ struct MainChat: View {
 //    @State var usermsg = ""
     @ObservedObject var chat: ChatViewModel
     @ObservedObject var vmg: UserSettings
+//    var users: UserModel
     var body: some View {
         VStack{
             ScrollView{
@@ -32,7 +33,10 @@ struct MainChat: View {
                         .onChange(of: chat.messageentered) {
                             data in chat.showTyping()
                         }
-                    
+//                        .onChange(of: chat.isOnline){
+//                            
+//                        }
+//                    
                         .padding()
 //                        .background(Color.white)
                         .onSubmit {
@@ -57,6 +61,12 @@ struct MainChat: View {
                     }
                 //
                     .navigationBarTitle(chat.isTyping ? "is typing" : String(chat.chat.id), displayMode: .inline)
+                    .navigationBarItems(trailing:  chat.isOnline ? Circle()
+                        .fill(Color.green)
+                        .frame(width: 10, height: 10) : Circle()
+                        .fill(Color.gray)
+                        .frame(width: 10, height: 10))
+                
             }
 //            vmg.user.username
         }.background(Color("Lightblue"))

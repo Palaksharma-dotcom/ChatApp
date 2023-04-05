@@ -6,12 +6,15 @@
 //
 
 import Foundation
-struct UserModel{
+struct UserModel {
+   
+    
     
     var username:String
     var secret:String
     var first_name:String
     var last_name:String
+//    var is_online:Bool
 }
 
 

@@ -27,6 +27,7 @@ class ChatBotModel: ObservableObject {
                     let admin = value["admin"] as? [String: Any]
                     let sender = admin?["username"] as? String ?? "Sender"
                     let people = value["people"] as? [[String: Any]]
+//                    ---->
                     let sam = people?[0] as? [String: Any]
                     let person = sam?["person"] as? [String: Any]
                     let receiver = person?["username"] as? String ?? "Receiver"
@@ -34,8 +35,10 @@ class ChatBotModel: ObservableObject {
                     let id = value["id"] as? Int ?? 0
                     let accessKey = value["access_key"] as? String ?? "8"
                     let lastMessaggeDetails = value["last_message"] as? [String: Any]
+//lastmessage will be  equal to the the new message entered by the user
                     var lastMessage = lastMessaggeDetails!["text"] as? String ?? "No Messages"
                     lastMessage = lastMessage.count == 0 ? "No Messages" : lastMessage
+//                    new msg entered will be appended in the list of chat
                     currentChats.append(ChatModel(id: id, sender: sender, receiver: receiver, title: title, accessKey: accessKey, lastMessage: lastMessage))
                 }
                 self.chats = currentChats
@@ -43,7 +46,7 @@ class ChatBotModel: ObservableObject {
     }
     
     func logoutUser(settings: UserSettings) {
-//        self.LogOutAlert = true
+//user name will be saved and all other details of user will be erased
         UserDefaults.standard.set("username", forKey: "username")
         UserDefaults.standard.set("", forKey: "firstname")
         UserDefaults.standard.set("", forKey: "lastname")

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatList: View {
     @State var search = ""
+//    @State var msg: MessageModel
     @EnvironmentObject private var setting: UserSettings
     @State var chatList:[ChatListRowView] = []
     @StateObject private var vm = ChatBotModel()

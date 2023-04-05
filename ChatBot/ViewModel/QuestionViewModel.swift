@@ -27,10 +27,11 @@ class QuestionViewModel: ObservableObject {
         return ques
     }
     
-
+//will show the first 4 initial questions
     func showStartingQuestions(allQuestions: FetchedResults<Questions>) {
         self.allQuestions = allQuestions
         questions = []
+//        questions whose parent id in nil
         let ques = loadQuestions(parent: nil)
         for que in ques {
             questions.append(QuestionModel(id: que.id!, parent: que.parent, que: que.question!))
@@ -41,11 +42,13 @@ class QuestionViewModel: ObservableObject {
     func questionRecurr(question: QuestionModel) {
         if question.fromBot {
             let item = loadQuestions(parent: question.id)
+//            question which are having sub child are send as a chat from user side
             if item.count != 0 {
                 questions.append(QuestionModel(id: UUID(), parent: UUID(), que: question.question, fromBot: false))
                 chatTitle = question.question
 
             }
+//            questions are saved in the chat
             for que in item {
                 questions.append(QuestionModel(id: que.id!, parent: que.parent, que: que.question!))
             }
@@ -75,7 +78,7 @@ class QuestionViewModel: ObservableObject {
                 })
     }
     
-    
+//    to save the questions when the app is killed and opened again
    func savePredefinedQuestion() {
         let levelOneData = [QuestionModel(id: UUID(), que: "NYE Prepaid Card"),
                     QuestionModel(id: UUID(), que: "Open Account"),

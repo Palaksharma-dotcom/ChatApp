@@ -14,7 +14,7 @@ class UserSettings: ObservableObject {
             username: UserDefaults.standard.value(forKey: "username") as? String ?? "username",
             secret: UserDefaults.standard.value(forKey: "secret") as? String ?? "secret",
             first_name: UserDefaults.standard.value(forKey: "firstname") as? String ?? "firstname",
-            last_name: UserDefaults.standard.value(forKey: "lastname") as? String ?? "lastname")
+            last_name: UserDefaults.standard.value(forKey: "lastname") as? String ?? "lastname" )
     }
     
     
