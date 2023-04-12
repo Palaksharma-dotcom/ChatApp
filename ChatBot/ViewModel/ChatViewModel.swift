@@ -123,6 +123,7 @@ class ChatViewModel: ObservableObject {
                                                     created: message["created"] as? String ?? "00:00",
                                                     text: message["text"] as? String ?? "Text")
                     self?.message.append(messageModel)
+                   
 
                 case "is_typing":
                     
@@ -146,7 +147,8 @@ class ChatViewModel: ObservableObject {
     }
 
 
-
+//
+//converting string to json
 extension String {
     func toJSON() -> Any? {
         guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }

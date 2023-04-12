@@ -33,6 +33,7 @@ struct CreateChat: Encodable {
 
 class NetworkManager {
     static let shared = NetworkManager()
+//    single intance is created 
     
     func requestForApi(requestInfo: [String: Any], completionHandler: ((Any)->())?) {
         var request = URLRequest(url: URL(string: Domains.url + (requestInfo["domain"] as! String))!)
@@ -41,6 +42,7 @@ class NetworkManager {
         if let httpBody = requestInfo["httpBody"] as? [String: String] {
             request.httpBody = try! JSONEncoder().encode(httpBody)
         }
+//        ----??Error handle
         if let createChat = requestInfo["createChat"] as? CreateChat {
             request.httpBody = try! JSONEncoder().encode(createChat)
         }

@@ -13,7 +13,7 @@ struct ChatList: View {
     @EnvironmentObject private var setting: UserSettings
     @State var chatList:[ChatListRowView] = []
     @StateObject private var vm = ChatBotModel()
-    
+    @FetchRequest(sortDescriptors: []) var questions: FetchedResults<Questions>
     
 //    @ObservedObject var chat: ChatViewModel
 //    @Published var singupAlert = false
@@ -52,6 +52,7 @@ struct ChatList: View {
             VStack{
                 Spacer()
                 if (vm.chats.count != 0){
+                   
                     List(vm.chats) { item in
                         NavigationLink(destination: MainChat(chat: ChatViewModel(chat: item, settings: setting),vmg: setting)) {
                             ChatListRowView(title: item.title, lastMsg: item.lastMessage)
@@ -79,8 +80,15 @@ struct ChatList: View {
             })
         }
         .onAppear() {
-            vm.loadChats(settings: setting)
-        }
+            if vm.isLoading{
+                ProgressView()
+            }
+           
+            vm.loadChats(questions: questions , settings: setting)
+            }
+            
+//            vm.loadChats(settings: setting)
+        
         }.background(Color("Lightblue"))
     }
 }

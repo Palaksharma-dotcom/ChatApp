@@ -58,6 +58,7 @@ class SocketManager: NSObject, URLSessionWebSocketDelegate {
         })
     }
     func ping() {
+//        checking if the socket is connected or not
 //        to point error
         webSocket?.sendPing(pongReceiveHandler: { error in
             if let error = error {

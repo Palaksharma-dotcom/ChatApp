@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct SignUp: View {
+//    StateObject for one screen we use StateObject as it don't reload the data when view is reloaded
+// ObservedObject used in
     @StateObject private var signup = SignUpViewModel()
     @FocusState var fieldtf: Focused?
+//    go back to the navigation view
     @Environment(\.presentationMode) var presentation
     var body: some View {
         VStack{

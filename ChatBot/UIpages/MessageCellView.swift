@@ -44,3 +44,4 @@ struct MessageCellView_Previews: PreviewProvider {
         MessageCellView(message: "hi", sender: true, created: "today", date: "dd/mm/yy")
     }
 }
+

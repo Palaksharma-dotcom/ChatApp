@@ -27,10 +27,11 @@ struct ContentView: View {
 //            ChatBotPage()
             
 
-        }.onAppear(){
-//            vm.savePredefinedQuestion()
         }
-//        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//        .onAppear(){
+//            vm.savePredefinedQuestion()
+//        }
+////        .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 
    
